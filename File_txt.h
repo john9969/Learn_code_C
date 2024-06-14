@@ -6,7 +6,7 @@ class File_txt
 {
 public:
 	//File_txt(std::string _Directory);
-	static std::int32_t readFileTxt(const std::string& dir, std::string& content);
+	staticstd::int32_t readFileTxt(const std::string& dir, std::string& content);
 	//static std::int8_t checkFileStatus(std::string dir, std::string& content);
 	static int8_t write(const std::string& content, std::string dir);
 	static std::string replaceString(std::string what_key, std::string replace_with, std::string source);
