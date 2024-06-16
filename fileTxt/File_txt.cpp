@@ -1,9 +1,9 @@
 #include "File_txt.h"
 #include <mutex>
 
-std::mutex mtx;
-
-std::int32_t File_txt::readFileTxt(
+std::mutex mtx;  
+File_txt::File_txt(){}
+int32_t File_txt::readFileTxt(
 	const std::string& dir,
 	std::string& content)
 {
@@ -27,7 +27,7 @@ std::int32_t File_txt::readFileTxt(
 		content = _output;
 		file.close();
 		std::cout << content;
-		return content.length();
+		return static_cast<int32_t>(content.length());
 }
 
 int8_t File_txt::write(
@@ -65,14 +65,14 @@ int32_t File_txt::replaceString(
 	return replaceCnt;
 }
 //tu sua tuanndm
-std::int8_t File_txt::writeNew(
+int8_t File_txt::writeNew(
 	const std::string &_content, 
 	const std::string &dir)
 {
 	return write(_content, dir);
 }
 //tu sua tuanndm
-std::int32_t File_txt::writeReplace(
+int32_t File_txt::writeReplace(
 	const std::string &what_key, 
 	const std::string &replace_with,
 	std::string &content, 
@@ -92,7 +92,7 @@ std::int32_t File_txt::writeReplace(
 		return replaceString(what_key, replace_with, content);
 }
 
-std::int8_t File_txt::pushContentBefore(
+int8_t File_txt::pushContentBefore(
 	const std::string &push_str,
 	std::string &content, 
 	const std::string &dir)
@@ -108,7 +108,7 @@ std::int8_t File_txt::pushContentBefore(
 	return 1;	
 }
 
-std::int8_t File_txt::appendContentLast(
+int8_t File_txt::appendContentLast(
 	const std::string &append_str,
 	std::string &content, 
 	const std::string &dir)
@@ -122,8 +122,3 @@ std::int8_t File_txt::appendContentLast(
 	content = content.append(append_str);
 	return 1;
 }
-
-//std::string File_txt::directory;
-//std::string File_txt::content;
-//std::fstream File_txt::file;
-//uint32_t File_txt::replaceCnt;
