@@ -1,5 +1,7 @@
 #include "ReadWriteAPI.h"
 
+ReadWriteAPI* ReadWriteAPI::Instance = NULL;
+
 ReadWriteAPI* ReadWriteAPI::getInstance()
 {
 	if (Instance == nullptr)

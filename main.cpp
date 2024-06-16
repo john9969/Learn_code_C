@@ -2,10 +2,10 @@
 #include <fstream>
 #include <string>
 #include <cstdint>
-#include "File_txt.h"
-#include "ReadWriteAPI.h"
+#include "fileTxt/File_txt.h"
+#include "readWrite/ReadWriteAPI.h"
 
-ReadWriteAPI* ReadWriteAPI::Instance = NULL;
+//ReadWriteAPI* ReadWriteAPI::Instance = NULL; -> da dinh nghia o file nguon de dam bao tinh dong goi
 
 int main()
 {

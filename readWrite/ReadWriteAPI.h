@@ -1,5 +1,5 @@
 #pragma once
-#include"File_txt.h"
+#include "../fileTxt/File_txt.h"
 class ReadWriteAPI
 {
 public:
@@ -36,5 +36,7 @@ private:
 	void operator=(ReadWriteAPI* other) = delete;
 
 };
+
+ReadWriteAPI* ReadWriteAPI::Instance = NULL;
 
 
