@@ -14,11 +14,6 @@ public:
 		const std::string& content, 
 		const std::string &dir);
 
-	static int32_t replaceString(
-		const std::string &what_key, 
-		const std::string &replace_with, 
-		std::string& source);
-
 	static std::int8_t writeNew(
 		const std::string &_content, 
 		const std::string &dir);
@@ -40,6 +35,11 @@ public:
 		const std::string &dir);
 
 private:
+	static int32_t replaceString(
+		const std::string &what_key, 
+		const std::string &replace_with, 
+		std::string& source);
+
 	//static std::string directory;
 	//static std::string content;
 	//static std::fstream file;

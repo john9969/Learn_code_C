@@ -46,7 +46,7 @@ int8_t File_txt::write(
 	file.close();
 	return 1;
 }
-//return num replaced, put in private tuanndm
+//return num replaced, put in private tuanndm-OK
 int32_t File_txt::replaceString(
 	const std::string &what_key, 
 	const std::string &replace_with, 
@@ -84,7 +84,8 @@ std::int32_t File_txt::writeReplace(
 		std::cout << "Cannot read/write file that does not exist!";
 		return 0;
 	}
-		//kho qua tuanndm oi !!!
+		//kho qua tuanndm oi !!!, phai mo file 2 lan lien,
+		//open file to replace xong close file xong lai open file de write, lieu co cong kenh qua khong ?
 		replaceString(what_key, replace_with, content);
 		file.close();
 		File_txt::write(content, dir);
