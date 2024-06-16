@@ -11,6 +11,7 @@ int main()
 {
 	ReadWriteAPI* readWriteAPI = ReadWriteAPI::getInstance();
 	int a;
+	//log
 	a=readWriteAPI->readFile("E:\\Sever\\in.txt");
 	std::cout <<std::endl<<a<<std::endl;
 	return 0;
