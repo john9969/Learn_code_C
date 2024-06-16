@@ -10,9 +10,10 @@ ReadWriteAPI* ReadWriteAPI::Instance = NULL;
 int main()
 {
 	ReadWriteAPI* readWriteAPI = ReadWriteAPI::getInstance();
-	int a;
+	int a = 5;
 	//log
-	a=readWriteAPI->readFile("E:\\Sever\\in.txt");
+	//a=readWriteAPI->readFile("E:\\Sever\\in.txt");
 	std::cout <<std::endl<<a<<std::endl;
+	std::cout<<"Hello world";
 	return 0;
 }
