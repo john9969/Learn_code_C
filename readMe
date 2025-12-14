@@ -1,0 +1,4 @@
+1. Types of cast
+    - static_cast: it runs faster because it do not check memory, check at compile time => unsafe
+    incase it nees to cast in dangerous zone: child* p_child  = static_cast<child*>new Fater () =>unsage
+    - dynamic_cast: it check during running time => when it cast it check memory and through error if has 
