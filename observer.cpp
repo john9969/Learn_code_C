@@ -2,7 +2,6 @@
 #include <memory>
 #include <map>
 #include <vector>
-
 class Observer{
 public:
     virtual void hasChange() =0;
@@ -62,12 +61,17 @@ public:
         if(!ptr) return;
         bool isOk = false;
         Observer* observer = static_cast<Observer*> (ptr);
-        for (int i =0 ; i < list_observer.size(); i++){
-            if(ptr == list_observer.at(i)->second){
-                isOk = true;
-                list_observer.erase(list_observer.begin() + i);
-                std::cout<< "Removed Ip: "<< list_observer.at(i)->first;
+        try {
+            for (int i =0 ; i < list_observer.size(); i++){
+                if(ptr == list_observer.at(i)->second){
+                    isOk = true;
+                    std::cout<< "Removed Ip: "<< list_observer.at(i)->first<<std::endl;
+                    list_observer.erase(list_observer.begin() + i);
+                }
             }
+        }
+        catch (const std::exception& message) {
+            std::cout<< "[Error]"<<message.what()<<std::endl;
         }
     }
     void notifyAll() override {
@@ -111,7 +115,7 @@ int main(){
     Observer* observer3 = new Client(subject);
     Observer* observer4 = new Client(subject);
     subject->notifyAll();
-    subject->notifyByIp("1.1..3");
+    subject->notifyByIp("1.1.1.3");
     delete(observer4);
     delete(observer3);
     delete(observer2);
